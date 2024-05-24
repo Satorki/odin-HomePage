@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* CONFIGURATION */
+@font-face {
+  font-family: "Homemade Apple";
+  src: url(./Homemade_Apple/HomemadeApple-Regular.ttf);
+}
+:root {
+  --first-c: #2e1065;
+  --second-c: #5b21b6;
+  --third-c: #7c3aed;
+  --fourth-c: #a78bfa;
+  --white-c: #fff;
+  --black-c: #000;
+}
+
+/* GLOBAL */
+body {
+  overflow-x: hidden;
+  background-color: var(--white-c);
+  color: var(--black-c);
+  font-family: "Homemade Apple";
+  background-image: url("/odin-HomePage/background/olga-thelavart-vS3idIiYxX0-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-indent: 40px;
+}
+.line {
+  margin: 0 0 20px 0;
+  padding: 0;
+  width: 96%;
+  border: none;
+  height: 1px;
+  background-color: var(--black-c);
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* NAVBAR SECTION */
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.burger-toggle {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.burger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s;
+}
+
+.navbar nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+  font-size: 1.2rem;
+}
+
+.navbar nav ul a {
+  text-decoration: none;
+  color: var(--black-c);
+  transition: 300ms;
+}
+
+.navbar nav ul a:hover {
+  color: var(--fourth-c);
+}
+
+@media (max-width: 600px) {
+  .burger-menu {
+    display: flex;
+    position: absolute;
+    right: 20px;
+  }
+
+  .navbar nav ul {
+    display: none;
+    position: absolute;
+    top: 69px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
+
+  .burger-toggle:checked + .burger-menu + nav ul {
+    display: flex;
+  }
+
+  .navbar nav ul li {
+    width: 100%;
+  }
+
+  .navbar nav ul a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--white-c);
+    background-color: var(--first-c);
+  }
+
+  .navbar nav ul a:hover {
+    background-color: var(--second-c);
+  }
+}
+
+/* TITLE SECTION */
+#title {
+  position: relative;
+  background-image: url("/odin-HomePage/photos/titleFogged.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  z-index: -1;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+#title h2 {
+  font-size: 4rem;
+  margin-left: 5rem;
+  color: var(--black-c);
+}
+#title h2 span {
+  color: var(--white-c);
+}
+
+/* ABOUT SECTION */
+#about {
+  position: relative;
+  margin: 0 20px;
+  color: var(--white-c);
+}
+#about::before {
+  background-color: var(--third-c);
+  position: absolute;
+  width: 110%;
+  height: 125%;
+  content: "";
+  transform: rotate(5deg);
+  z-index: -1;
+  border-radius: 15px;
+  top: -10px;
+  left: -30px;
+}
+#about .text {
+  text-indent: 40px;
+  padding: 0 20px;
+  font-size: 0.9rem;
+  color: var(--white-c);
+}
+
+/* PHOTO SECTION */
+#photos {
+  margin: 70px 20px;
+  position: relative;
+  color: var(--black-c);
+}
+#photos::before {
+  background-color: var(--fourth-c);
+  position: absolute;
+  width: 120%;
+  height: 110%;
+  content: "";
+  transform: rotate(3deg);
+  z-index: -1;
+  border-radius: 15px;
+  top: -10px;
+  left: -80px;
+}
+
+#photos ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#photos li {
+  height: 30vh;
+  flex-grow: 1;
+}
+
+#photos img {
+  max-height: 100%;
+  min-width: 100%;
+  max-width: 200px;
+  object-fit: cover;
+  vertical-align: bottom;
+  border: 2px solid var(--first-c);
+}
+
+#photos li:last-child {
+  flex-grow: 10;
+}
+
+/* PREFERENCES SECTION */
+#preferences {
+  margin: 70px 20px;
+  position: relative;
+  color: var(--white-c);
+}
+#preferences::before {
+  background-color: var(--second-c);
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  content: "";
+  transform: rotate(-3deg);
+  z-index: -1;
+  border-radius: 15px;
+  top: -10px;
+  left: -50px;
+}
+
+#preferences h3 {
+  text-align: end;
+  margin-right: 30px;
+}
+.preferences-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#preferences ul {
+  margin: 0 20px;
+}
+/* ARROW BACK */
+.arrow-back-container{
+  width: 85vw;
+  display: flex;
+  justify-content: end;
+  position: sticky;
+  top: 90vh;
+  z-index: 10;
+}
+#arrow-back {
+  text-align: center;
+  color: var(--black-c);
+  text-decoration: none;
+  font-size: 1rem;
+  width: 2rem;
+  margin: 0;
+  padding: 2px 1px 0 1px;
+  box-shadow: 0 0 2px 1px var(--first-c);
+  border-radius: 50%;
+}
+#arrow-back:hover {
+  color: var(--first-c);
+  box-shadow: inset 0 0 5px 1px var(--black-c);
+}
+
+@media (max-width: 600px) {
+  #photos::before {
+    width: 150%;
+  }
+  #preferences::before {
+    left: -10px;
+  }
+  #title {
+    position: relative;
+  }
+  #title h2 {
+    position: absolute;
+    top: 15px;
+  }
+  .arrow-back-container{
+    width: 95vw;
+  }
+}
