@@ -23,7 +23,7 @@ body {
   background-color: var(--white-c);
   color: var(--black-c);
   font-family: "Homemade Apple";
-  background-image: url("/odin-HomePage/background/olga-thelavart-vS3idIiYxX0-unsplash.jpg");
+  background-image: url("/odin-HomePage/background/background.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -140,7 +140,7 @@ h1 {
 /* TITLE SECTION */
 #title {
   position: relative;
-  background-image: url("/odin-HomePage/photos/titleFogged.jpeg");
+  background-image: url("/odin-HomePage/photos/titleClear.jpeg");
   background-size: cover;
   background-position: center;
   color: white;
@@ -203,30 +203,26 @@ h1 {
 }
 
 #photos ul {
+  font-size: 0.8rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
 }
 
 #photos li {
-  height: 30vh;
-  flex-grow: 1;
+  flex: 25%;
+  max-width: 25%;
+  text-align: center;
 }
 
 #photos img {
-  max-height: 100%;
-  min-width: 100%;
-  max-width: 200px;
-  object-fit: cover;
-  vertical-align: bottom;
-  border: 2px solid var(--first-c);
+  vertical-align: middle;
+  width: 100%;
+  box-shadow: 0 0 0 5px var(--first-c);
 }
-
-#photos li:last-child {
-  flex-grow: 10;
+#photos p {
+  margin: 3px 0 8px 0;
 }
 
 /* PREFERENCES SECTION */
@@ -260,7 +256,7 @@ h1 {
   margin: 0 20px;
 }
 /* ARROW BACK */
-.arrow-back-container{
+.arrow-back-container {
   width: 85vw;
   display: flex;
   justify-content: end;
@@ -284,9 +280,16 @@ h1 {
   box-shadow: inset 0 0 5px 1px var(--black-c);
 }
 
+@media (max-width: 800px) {
+  #photos li {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
 @media (max-width: 600px) {
   #photos::before {
     width: 150%;
+    left: -200px;
   }
   #preferences::before {
     left: -10px;
@@ -298,7 +301,18 @@ h1 {
     position: absolute;
     top: 15px;
   }
-  .arrow-back-container{
+  .arrow-back-container {
     width: 95vw;
+  }
+  #photos li {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  #photos::before {
+    width: 170%;
+    height: 102%;
+    left: -120px;
   }
 }
